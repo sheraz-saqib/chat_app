@@ -1,7 +1,6 @@
-
 <?php
 
-   
+
 
 ?>
 <!DOCTYPE html>
@@ -33,13 +32,16 @@
             $get_reci_id = $_GET['user_id'];
             $get_sender_id = $_GET['sender_id'];
             $rece_userQ = "SELECT * FROM user WHERE user_rand_id = $get_reci_id";
-    $update_message_viewQ = "UPDATE `message_list` SET `is_view`= 0  WHERE reciever_id = $get_reci_id  AND sender_id=$get_sender_id OR reciever_id =$get_sender_id   AND sender_id= $get_reci_id";
-    $update_message_view = mysqli_query($conn, $update_message_viewQ);
+            $update_message_viewQ = "UPDATE `message_list` SET `is_view`= 0  WHERE reciever_id = $get_reci_id  AND sender_id=$get_sender_id OR reciever_id =$get_sender_id   AND sender_id= $get_reci_id";
+            $update_message_view = mysqli_query($conn, $update_message_viewQ);
             $rece_user = mysqli_query($conn, $rece_userQ);
             $fetch_rece_id = mysqli_fetch_assoc($rece_user);
             ?>
+
+            <input id="get_reci_id" type="text" value="<?= $get_reci_id ?>" hidden>
+            <input id="get_sender_id" type="text" value="<?= $get_sender_id ?>" hidden>
             <div class="user_detail">
-                <div class="user_img">
+                <!-- <div class="user_img">
                     <img src="./user_img/<?= $fetch_rece_id['user_img'] ?>" alt="">
                 </div>
 
@@ -52,7 +54,7 @@
                     }
                     ?>
 
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -78,7 +80,7 @@
             </div> -->
             <!-- sender message -->
             <!-- sender message -->
-<!-- 
+            <!-- 
             <div class="sender_message">
                 <div class="sender_img">
                     <img src="./img/BHANAK OP LOGO.png" alt="">
@@ -106,7 +108,7 @@
             <div class="message_input_container">
                 <input type="text" value="<?= $get_reci_id ?>" name="reci_id" hidden>
                 <input type="text" value="<?= $get_sender_id ?>" name="sender_id" hidden>
-                <div class="message_input"><i class='bx bx-plus'></i><input name="mess_text"   spellcheck="false" autocomplete="off" type="text" placeholder="message..."><i class='bx bxs-send message_send_btn'></i></div>
+                <div class="message_input"><i class='bx bx-plus'></i><input name="mess_text" spellcheck="false" autocomplete="off" type="text" placeholder="message..."><i class='bx bxs-send message_send_btn'></i></div>
             </div>
     </div>
     </form>
@@ -115,6 +117,8 @@
     require 'message_js.php';
     ?>
 </body>
-<!-- <script src="app.js"></script> -->
+<script>
+   
+</script>
 
 </html>

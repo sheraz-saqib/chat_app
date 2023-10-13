@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_rand_id']) ||  $_SESSION['user_rand_id'] == '' ||  $_
     header('location:index.php');
 }
 
- 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,14 +32,33 @@ if (!isset($_SESSION['user_rand_id']) ||  $_SESSION['user_rand_id'] == '' ||  $_
             position: relative;
         }
 
-        .new_message{
+        .new_message {
             position: absolute;
             right: 4rem;
             background-color: rgb(37, 124, 37);
-            padding:.1rem .5rem ;
+            padding: .1rem .5rem;
             border-radius: 50%;
             font-size: .9rem;
             color: white;
+        }
+
+        .user_not_found {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+margin-top: 2rem;
+        }
+
+        .user_not_found p{
+text-align: center;
+display: flex;
+align-items: center;
+font-weight: 500;
+        } .user_not_found i {
+            font-size: 1.4rem;
+
         }
     </style>
 </head>
@@ -74,7 +93,7 @@ if (!isset($_SESSION['user_rand_id']) ||  $_SESSION['user_rand_id'] == '' ||  $_
 
         <div class="user_body">
 
-
+           
             <!-- user -->
             <!-- <a href="userMessage.html">
                 <div class="user">
@@ -104,32 +123,12 @@ if (!isset($_SESSION['user_rand_id']) ||  $_SESSION['user_rand_id'] == '' ||  $_
 
 
 </body>
-<script src="app.js"></script>
+<?php
+require 'app_js.php';
+?>
 <script src="option.js"></script>
 <!-- <script src="show_user_js.php"></script> -->
 
-<script>
-    const chat_body = document.querySelector('.user_body');
 
-
-
-    setInterval(() => {
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', './php/fetch_user.php', true);
-        xhr.onload = () => {
-            if (xhr.readyState && XMLHttpRequest.DONE) {
-                if (xhr.status == 200) {
-                    let data = xhr.responseText;
-                    // console.log(data);
-
-                    chat_body.innerHTML = data;
-
-
-                }
-            }
-        }
-        xhr.send()
-    }, 500)
-</script>
 
 </html>
