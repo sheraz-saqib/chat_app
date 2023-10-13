@@ -1,0 +1,83 @@
+@import url(root.css);
+
+.profile_header{
+    display: flex;
+    padding: 0 3rem;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    color: #646363;
+    font-weight: lighter;
+}
+.profile_detail_group{
+    display: flex;
+    align-items: center;
+}
+.profile_header h2{
+    font-weight: 400;
+}
+.profile_detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+    margin-top: 1rem;
+}
+.profile_img img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+
+}
+.m-2{
+    margin-top: 2rem;
+}
+.user_name{
+    margin-left: 1rem;
+    font-size: 1.6rem;
+    color: #000000d3;
+    font-weight: 600;
+}
+.profile_other_detail{
+    padding: 0 3rem;
+    margin-top: 2rem;
+}
+.detail{
+    height: 5rem;
+}
+.detail_head{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    color: #000000ab;
+    
+}
+.profile_update a{
+ background-color: var(--primary_color);
+ color: white;
+ padding: .5rem 1rem;
+ font-size: 1.2rem;
+ text-transform: capitalize;
+ border-radius: .5rem;
+white-space: nowrap;
+}
+.back_btn{
+    display: flex;
+    align-items: center;
+margin-right: 0.3rem;
+margin-left: 0.5rem;
+}
+.back_btn i{
+    font-size: 1.5rem;
+    color: white;
+    background-color: var(--primary_color);
+    padding:.5rem;
+    border-radius: 50%;
+}
+.pro_h-1{
+    padding: 0;
+}
+.detail p{
+    font-size: 1.1rem;
+    font-weight: 400;
+}

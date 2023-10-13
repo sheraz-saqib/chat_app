@@ -30,7 +30,7 @@
 
             <div class="show_error">
 
-                <div class="error">
+                <!-- <div class="error">
 
                     <div class="error_contain">
                         <p class="error_text">Lorem ipsum dolor sit amet.</p>
@@ -38,7 +38,7 @@
                     <div class="error_cross">
                         <i class='bx bx-x error_cross'></i>
                     </div>
-                </div>
+                </div> -->
 
             </div>
 
@@ -48,7 +48,7 @@
 
             <form action="" class="signin_form">
 
-               
+
 
                 <!-- field -->
 
@@ -56,8 +56,7 @@
                     <div class="field_title">email</div>
                     <div class="field">
                         <div class="field_icon"><i class='bx bxs-envelope'></i></div>
-                        <div class="field_input"><input type="email" minlength="10" maxlength="40" name="email"
-                                placeholder="Enter your email@gmail.com"></div>
+                        <div class="field_input"><input type="email" minlength="10" maxlength="40" name="email" placeholder="Enter your email@gmail.com"></div>
                     </div>
 
                 </div>
@@ -68,30 +67,28 @@
                     <div class="field_title">Password</div>
                     <div class="field">
                         <div class="field_icon"><i class='bx bxs-lock-open'></i></div>
-                        <div class="field_input password_field"><input type="password" name="password"
-                                placeholder="Enter your password"><i class="fa-solid fa-eye open_eye_icon"></i><i
-                                class="fa-solid fa-eye-slash close_eye_icon active"></i></div>
+                        <div class="field_input password_field"><input type="password" name="password" placeholder="Enter your password"><i class="fa-solid fa-eye open_eye_icon"></i><i class="fa-solid fa-eye-slash close_eye_icon active"></i></div>
                     </div>
 
                 </div>
                 <!-- field -->
-             
 
-              
-             
-               
+
+
+
+
                 <!-- field -->
 
 
                 <div class="contoller_btn">
-                    <input type="submit" name="create_acc_submit" value="Create Account">
+                    <input type="submit" id="login_btn" name="create_acc_submit" value="Login">
                 </div>
 
         </div>
 
 
         <div class="footer">
-            <p>create a new account? <a href="createacc.html">create account</a></p>
+            <p>create a new account? <a href="createacc.php">create account</a></p>
         </div>
 
     </div>
@@ -99,6 +96,8 @@
     </form>
 
 </body>
-<script src="login.js" defer></script>
+<?php 
+require 'login_js.php'
+?>
 
 </html>

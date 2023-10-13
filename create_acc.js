@@ -9,9 +9,10 @@ const open_eye_icon = document.querySelectorAll(".open_eye_icon"),
   show_user_img_btn = document.querySelector(".show_user_img_btn"),
   show_img_container = document.querySelector(".show_img_container"),
   show_error_container = document.querySelector('.show_error'),
-  error_cross = document.querySelector('.error_cross'),
   error_box = document.querySelector('.error'),
-  sigup_form = document.querySelector('.sigup_form');
+  sigup_form = document.querySelector('.sigup_form'),
+  create_acc_btn = document.querySelector('#create_acc_btn');
+
 
 function showAndHidePass(input) {
   input.type == "password" ? (input.type = "text") : (input.type = "password");
@@ -41,6 +42,7 @@ function imgError() {
   show_user_img_btn.setAttribute("disabled", "disabled");
   img_input_h2.textContent = 'Choose Picture'
    field_icon.innerHTML= "<i class='bx bx-photo-album'></i>"
+
 }
 function imgSuccess() {
   show_img_container.classList.remove("disabled");
@@ -66,6 +68,8 @@ function fileValidation() {
     imgSuccess();
   } else {
     imgError();
+    user_image_input.value = '';
+  
   }
 }
 // }
@@ -78,11 +82,43 @@ show_user_img_btn.addEventListener("click", () => {
 
 
 
-error_cross.addEventListener('click',()=>{
-  error_box.remove()
-})
+
 
 sigup_form.addEventListener('submit',e=>{
   e.preventDefault();
 })
+
+
+
+
+// create_acc_btn.addEventListener('click',()=>{
+// let xhr  = new XMLHttpRequest();
+// xhr.open('POST','./php/create_acc.php',true);
+// xhr.onload = ()=>{
+//   if(xhr.readyState && XMLHttpRequest.DONE){
+//     if(xhr.status == 200){
+//       let data = xhr.responseText;
+//       console.log(data);
+//       show_error.innerHTML += data;
+//       if(data == "success"){
+//         window.location.href= 'login.php';
+//       }
+//     }
+//   }
+// }
+// let formData = new FormData(sigup_form)
+// xhr.send(formData)
+// })
+
+
+// setInterval(()=>{
+// error_cross.forEach(crr=>{
+// crr.addEventListener('click',()=>{
+//   let doc = crr.pr;
+//   console.log(doc);
+//   // error_box.remove()
+// })
+// })
+// },600)
+
 
