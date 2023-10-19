@@ -30,7 +30,7 @@ while ($data = mysqli_fetch_assoc($fetch_user)) {
 ?>
 
     <?php
-
+    (strlen($result) >= 25) ?  $msg =  substr($result, 0, 25) . "...." : $msg = $result;
     $select_is_viewQ = "SELECT * FROM message_list WHERE reciever_id = $user_rand_id  AND sender_id=$recieve_id  AND `is_view` = 1";
     $select_is_view = mysqli_query($conn, $select_is_viewQ);
     $is_view = mysqli_num_rows($select_is_view);
@@ -46,7 +46,7 @@ while ($data = mysqli_fetch_assoc($fetch_user)) {
 
                 <div class="user_detail">
                     <div class="user_name"><?= $data['user_name'] ?> </div>
-                    <div class="message"><?= $result ?></div>
+                    <div class="message"><?= $msg  ?></div>
                 </div>
 
 

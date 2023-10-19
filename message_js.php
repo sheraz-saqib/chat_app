@@ -12,8 +12,17 @@
     }
 
 
-    message_send_btn.addEventListener('click', () => {
 
+    window.addEventListener('keydown', (e) => {
+        let Key = e.key;
+
+        if (Key == 'Enter') {
+            message_send_btn.click()
+        }
+    })
+
+    message_send_btn.addEventListener('click', () => {
+        message_body.classList.remove('active')
         if (message_input.value != '') {
             let xhr = new XMLHttpRequest();
             xhr.open('POST', './php/insert_mess.php', true);
@@ -41,7 +50,7 @@
     })
 
 
-    message_body.addEventListener('mouseenter', () => {
+    message_body.addEventListener('scroll', () => {
         message_body.classList.add('active')
     })
     message_body.addEventListener('mouseleave', () => {
@@ -87,4 +96,8 @@
         }
         xhr.send()
     }, 500)
+
+
+
+    
 </script>

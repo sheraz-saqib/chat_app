@@ -19,15 +19,18 @@ while ($data = mysqli_fetch_assoc($fetch_user)) {
             $result = "You:" .$mess_data['mes_text'];
             if($mess_data['sender_id'] == $recieve_id){
                 $result = $mess_data['mes_text'];
+              
             }
         }
 
     } else {
-        $result = "no message";
+            $result = "no message";
     }
 ?>
 
 <?php
+    (strlen($result) >= 25) ?  $msg =  substr($result, 0, 25) . "...." : $msg = $result;
+
 
 $select_is_viewQ = "SELECT * FROM message_list WHERE reciever_id = $user_rand_id  AND sender_id=$recieve_id  AND `is_view` = 1";
 $select_is_view = mysqli_query($conn,$select_is_viewQ);
@@ -44,7 +47,7 @@ $select_is_view = mysqli_query($conn,$select_is_viewQ);
 
                 <div class="user_detail">
                     <div class="user_name"><?= $data['user_name'] ?> </div>
-                    <div class="message"><?= $result ?></div>
+                    <div class="message"><?= $msg ?></div>
                 </div>
 
 

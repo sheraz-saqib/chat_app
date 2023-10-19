@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="userMess.css">
+    <?php 
+    require 'userMess_css.php';
+    ?>
 </head>
 
 <body>
@@ -27,6 +30,9 @@
             </div>
 
 
+
+
+            
             <?php
             require './php/config.php';
             $get_reci_id = $_GET['user_id'];
@@ -36,6 +42,9 @@
             $update_message_view = mysqli_query($conn, $update_message_viewQ);
             $rece_user = mysqli_query($conn, $rece_userQ);
             $fetch_rece_id = mysqli_fetch_assoc($rece_user);
+
+
+            
             ?>
 
             <input id="get_reci_id" type="text" value="<?= $get_reci_id ?>" hidden>
@@ -118,6 +127,9 @@
     ?>
 </body>
 <script>
+   
+
+
    
 </script>
 
